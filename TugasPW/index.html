@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Samuel Silaban</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+  <style>
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+    scroll-behavior: smooth; 
+}
+
+body {
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+.header {
+    background-color: rgba(0, 30, 60, 0.078); 
+    color: rgba(255, 255, 255, 0.85);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+.header:hover {
+    background-color: rgba(52, 52, 56, 0.9);
+    box-shadow: 0 6px 12px rgba(181, 204, 220, 0.4);
+}
+
+.logo img {
+    height: 50px;
+    width: auto;
+    transition: transform 0.3s ease, filter 0.3s ease;
+    border-radius: 50%; 
+}
+
+
+.logo img:hover {
+    transform: scale(1.1);
+    filter: brightness(1.2);
+}
+
+.navbar a {
+    color: rgba(255, 255, 255, 0.85);
+    text-decoration: none;
+    margin: 0 1.2rem;
+    font-size: 1rem;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+    color: rgba(137, 147, 150, 0.9);
+}
+
+.navbar a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: white;
+    left: 0;
+    bottom: -5px;
+    transition: width 0.3s ease;
+}
+
+.navbar a:hover::after {
+    width: 100%;
+}
+
+.main-content {
+    padding-top: 5rem;
+}
+
+.home-section {
+    height: 100vh;
+    background-image: url('angkasa.jpg'); 
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    position: relative;
+}
+
+.home-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); 
+    z-index: 1;
+}
+
+.content {
+    position: relative;
+    z-index: 2;
+}
+
+.content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.btn-primary {
+    background-color: #ff5733; 
+    border: none;
+    padding: 0.75rem 2rem;
+    color: white; 
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 30px; 
+}
+
+.btn-primary:hover {
+    background-color: #c13d1b; 
+    transform: translateY(-5px); 
+}
+
+.footer {
+    background-color: #1e1d1d;
+    color: white;
+    text-align: center;
+    padding: 1.5rem 0;
+    border-top: 5px solid #ff5733;
+    margin-top: 0; 
+    position: relative;
+    z-index: 3;
+}
+
+.footer p {
+    margin: 0;
+    font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+    .home-section h1 {
+        font-size: 2.5rem;
+    }
+
+    .navbar a {
+        font-size: 0.9rem;
+        margin: 0 0.8rem;
+    }
+
+    .btn-primary {
+        padding: 0.6rem 1.5rem;
+        font-size: 0.9rem;
+    }
+}
+
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="logo">
+      <img src="ell.png" alt="Logo" class="logo-img"> 
+    </div>
+    <nav class="navbar">
+      <a href="#home">Home</a>
+      <a href="about.html" target="_blank" onclick="window.open('about.html', '_blank')">About</a>
+    </nav>  
+  </header>
+
+  <section id="home" class="home-section">
+    <div class="content">
+      <h1 data-aos="fade-up">Selamat Datang di Website Samm!!</h1>
+      <p data-aos="fade-up" data-aos-delay="200">Website yang menjelaskan,Siapa itu Samuel Silaban?</p>
+      <button class="btn-primary" data-aos="fade-up" data-aos-delay="400" onclick="window.location.href='https://taplink.cc/samuelsilaban'">Selengkapnya Tentang Samuel</button>
+
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>&copy; 2024 Samuel Silaban. All rights reserved.</p>
+  </footer>
+
+  <script src="scripts.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+</body>
+</html>

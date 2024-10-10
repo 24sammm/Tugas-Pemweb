@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tentang Samuel Silaban</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="logo">
+      <img src="ell.png" alt="Logo" class="logo-img">
+    </div>
+    <nav class="navbar">
+        <a href="index.html" target="_blank" onclick="window.open('index.html', '_blank')">Home</a>
+      <a href="#skills">Keterampilan</a>
+      <a href="#contact">Kontak</a>
+    </nav>
+  </header>
+
+  <section id="home" class="home-section">
+    <div class="intro-container">
+      <img src="sammm.jpg" alt="Foto Anda" class="profile-photo" data-aos="fade-right">
+      <div class="intro-text" data-aos="fade-left">
+        <h1>Samuel Silaban</h1>
+        <ul>
+            <li><span>Tempat,Tanggal Lahir:</span> <span>Garut, 24 September 2005</span></li>
+            <li><span>Usia:</span> <span>19 Tahun</span></li>
+            <li><span>Alamat:</span> <span>Jln. Bratayudha, Kp. Sumbersari Rt.004/Rw.021, Kec. Garut Kota Kab. Garut Prov. Jawa Barat</span></li>
+            <li><span>Keahlian:</span> <span>Musik, Pemrograman Dasar</span></li>
+        </ul>
+        <div class="center-text">
+            <p>Universitas Pendidikan Indonesia</p>
+            <p>Sistem Informasi Kelautan</p>
+        </div>
+    </div>
+    
+    </div>
+  </section>
+
+  <section id="skills" class="skills-section">
+    <div class="container">
+      <h2 data-aos="fade-left">Keterampilan</h2>
+      <div class="skill-cards">
+        <div class="card" data-aos="flip-left">
+          <h3>Keterampilan 1</h3>
+          <p>Musik:Piano,Gitar,Bass</p>
+          <p>-Juara 2 Festival Catatan Anak Sekolah,TemuKunci Garut-Band</p>
+        </div>
+        <div class="card" data-aos="flip-left" data-aos-delay="200">
+          <h3>Keterampilan 2</h3>
+          <p>Pemograman Dasar</p>
+          <p>Html,css,JavaScript</p>
+        </div>
+        <div class="card" data-aos="flip-left" data-aos-delay="400">
+          <h3>Keterampilan 3</h3>
+          <p>Sedang ditahap mencari keterampilan ke 3.</p>
+          <p></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact-section">
+    <div class="container">
+      <h2 data-aos="fade-up">Kontak Saya</h2>
+      <form id="contactForm">
+        <input type="text" placeholder="Nama Anda" required data-aos="fade-up">
+        <input type="email" placeholder="Email Anda" required data-aos="fade-up" data-aos-delay="200">
+        <textarea placeholder="Pesan Anda" required data-aos="fade-up" data-aos-delay="400"></textarea>
+        <button type="submit" class="btn-primary" data-aos="fade-up" data-aos-delay="600">Kirim Pesan</button>
+      </form>
+      <p id="feedbackMessage"></p>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>&copy; 2024 Samuel Silaban. Semua hak dilindungi.</p>
+  </footer>
+
+  <script src="scripts.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init();
+    document.querySelectorAll('.navbar a').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href').substring(1);
+        document.getElementById(targetId).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+    
+    const contactForm = document.getElementById('contactForm');
+    const feedbackMessage = document.getElementById('feedbackMessage');
+    
+    contactForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      feedbackMessage.textContent = "Terima kasih! Pesan Anda telah terkirim.";
+      feedbackMessage.style.color = 'green';
+    });
+  </script>
+</body>
+</html>
